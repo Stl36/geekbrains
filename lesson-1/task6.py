@@ -6,4 +6,4 @@ while True:
     if int(beginDistance) >= targetDistance:
         break
     day += 1
-    beginDistance = beginDistance *2 1.1
+    beginDistance = beginDistance * 1.1
