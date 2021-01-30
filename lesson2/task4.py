@@ -3,8 +3,8 @@
 Вывести каждое слово с новой строки. Строки необходимо пронумеровать.
 Если в слово длинное, выводить только первые 10 букв в слове.
 """
+
+
 words = input("Введите через пробел слова\n").split()
-strNumber = 1
-for i in words:
-    print(f"{strNumber} {i[:10]}")
-    strNumber += 1
+for id, item in enumerate(words):
+    print(f"{id + 1} {item[:10]}")

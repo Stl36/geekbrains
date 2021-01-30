@@ -42,9 +42,8 @@ while True:
         break
     id += 1
 analytics = dict()
-for x in range(len(accounting)):
-    for i in accounting[x][1]:
-        analytics[i] = []
+for i in accounting[0][1]:
+    analytics[i] = []
 tempListKeys = []
 for acctup in accounting:
     tempListKeys = acctup[1].keys()

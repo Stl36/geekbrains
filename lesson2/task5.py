@@ -11,10 +11,7 @@
 rate = [int(i) for i in input("Введите через пробел набор натуральных чисел\n").split()]
 rate.sort()
 element = int(input("Введите новый элемент рейтинга\n"))
-if element in rate:
-    rate.insert(rate.index(element), element)
-else:
-    rate.append(element)
+rate.append(element)
 rate.sort(reverse=True)
 for i in rate:
     print(i, end=" ")
