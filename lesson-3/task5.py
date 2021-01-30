@@ -11,7 +11,7 @@
 
 
 def input_list():
-    return [i for i in input("Введите список чисел\nДля завершения введите q\n").split()]
+    return input("Введите список чисел\nДля завершения введите q\n").split()
 
 
 def update_list(input_list):
@@ -19,7 +19,7 @@ def update_list(input_list):
 
 
 def q_remove(input_list):
-    return input_list.remove("q")
+    input_list.remove("q")
 
 
 def q_search(input_list):

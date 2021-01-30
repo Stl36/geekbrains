@@ -11,22 +11,22 @@ email,
 """
 
 
-def inputData(var_name):
+def input_data(var_name):
     return input(f'Введите {var_name} ')
 
 
-def updateUser():
-    name= inputData('Имя')
-    surname = inputData('Фамилию')
-    birthday = inputData('Дату рождения')
-    city = inputData('Город')
-    email = inputData('email')
-    mobile = inputData('Номер телефона')
+def update_user():
+    name = input_data('Имя')
+    surname = input_data('Фамилию')
+    birthday = input_data('Дату рождения')
+    city = input_data('Город')
+    email = input_data('email')
+    mobile = input_data('Номер телефона')
     return (name, surname, birthday, city, email, mobile)
 
 
-def printUserData(name, surname, bithday, city, email, mobile):
+def print_user_data(name, surname, bithday, city, email, mobile):
     print(name, surname, bithday, city, email, mobile)
 
 
-printUserData(*updateUser())
+print_user_data(*update_user())
