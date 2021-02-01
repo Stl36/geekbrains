@@ -6,10 +6,14 @@
 
 
 my_l = []
+average_salary = 0
 with open(r"new_f3.txt", "r") as f_obj:
     for line in f_obj:
         my_l.append(line.split())
+print(f"Сотрудники с ЗП менее 20000")
 for el in my_l:
     el[1] = int(el[1])
     if el[1] < 20000:
-        print(el[0], end=" ")
+        print(f"{el[0]}")
+    average_salary += el[1]
+print(f"Средняя ЗП в фирме {(average_salary / len(my_l)):.2f}")
