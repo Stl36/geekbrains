@@ -4,3 +4,5 @@
 Необходимо получить результат вычисления произведения всех элементов списка.
 Подсказка: использовать функцию reduce().
 """
+from functools import reduce
+print(reduce(lambda x,y: x * y, [item for item in range(100, 1001) if item % 2 == 0]))
