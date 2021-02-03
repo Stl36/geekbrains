@@ -36,7 +36,7 @@ def get_number_from_line(line_: str):
         return int(c)
 
 
-def split_line(line_: str):
+def calc_sum_of_split_line(line_: str):
     return sum(get_number_from_line(el) for el in line_.split())
 
 
@@ -48,7 +48,7 @@ print(my_l)
 final_dict = {}
 char = ":"
 for line in my_l:
-    final_dict[get_course_name(line, char)] = split_line(line)
+    final_dict[get_course_name(line, char)] = calc_sum_of_split_line(line)
 
 for el in final_dict:
     print(el, final_dict[el])
