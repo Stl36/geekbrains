@@ -34,6 +34,7 @@ class TrafficLight:
 
 
 specimen = TrafficLight()
+b = TrafficLight()
 REPEATER = 5
 for x in range(REPEATER):
-    print(specimen.running())
+    specimen.running()
