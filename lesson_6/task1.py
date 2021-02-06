@@ -9,6 +9,31 @@
 переключение между режимами должно осуществляться только в указанном порядке (красный, жёлтый, зелёный);
 проверить работу примера, создав экземпляр и вызвав описанный метод.
 
-Задачу можно усложнить, реализовав проверку порядка режимов. При его нарушении выводить соответствующее сообщение и завершать скрипт.
+Задачу можно усложнить, реализовав проверку порядка режимов.
+При его нарушении выводить соответствующее сообщение и завершать скрипт.
 """
+from time import sleep
 
+
+class TrafficLight:
+    _color = 'красный'
+
+    def running(self):
+        if self._color == 'красный':
+            print(self._color)
+            sleep(7)
+            self._color = 'жёлтый'
+        elif self._color == 'жёлтый':
+            print(self._color)
+            sleep(2)
+            self._color = 'зелёный'
+        elif self._color == 'зелёный':
+            print(self._color)
+            sleep(5)
+            self._color = 'красный'
+
+
+specimen = TrafficLight()
+REPEATER = 5
+for x in range(REPEATER):
+    print(specimen.running())
