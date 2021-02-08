@@ -13,14 +13,17 @@
 
 """
 class Road:
+
     def __init__(self, l, w, d = 25, t = 5):
         self.__length = l
         self.__width = w
         self.__density = d
         self.__thickness = t
+
     def calc_mass(self, t = 5):
         self.__thickness = t
         return (self.__length * self.__width * self.__density * self.__thickness)
+
 
 el_1 = Road(5000, 20)
 print(el_1.__dict__)
