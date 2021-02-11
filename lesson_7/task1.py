@@ -32,23 +32,22 @@ class Matrix:
         return "\n".join(" ".join(str(elem) for elem in row) for row in self.matrix)
 
     def __add__(self, other):
-        if len(self.matrix) != len(other):
+        if len(self.matrix) != len(other.matrix):
             raise ValueError("Размеры матриц должны быть одинаковыми!")
         for i, row in enumerate(self.matrix):
-            if len(row) != len(other[i]):
+            if len(row) != len(other.matrix[i]):
                 raise ValueError("Размеры матриц должны быть одинаковыми!")
 
         matrix_out = []
         for i, row in enumerate(self.matrix):
             matrix_out.append(row.copy())
             for j, elem in enumerate(row):
-                matrix_out[i][j] = matrix_out[i][j] + elem
+                matrix_out[i][j] = matrix_out[i][j] + other.matrix[i][j]
         return Matrix(matrix_out)
 
 
 m1 = Matrix([[1, 2, 3], [2, 3, 4], [4, 5, 6]])
 m2 = Matrix([[9, 2, 9], [7, 0, 4], [1, 5, 8]])
-release_matrix = m1.__add__(m2.matrix)
-print(m1.__str__(), "\n")
-print(m2.__str__(), "\n")
-print(release_matrix.__str__())
+print(m1, "\n")
+print(m2, "\n")
+print(m1 + m2)
