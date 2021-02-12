@@ -24,3 +24,50 @@
 Подсказка: подробный список операторов для перегрузки доступен по ссылке.
 
 """
+
+
+class Cell:
+
+    def __init__(self, nucleus):
+        if type(nucleus) == int and nucleus > 0:
+            self.nucleus = nucleus
+        else:
+            raise TypeError("Количество ячеек должно быть целым положительным числом")
+
+    def __add__(self, other):
+        return Cell(self.nucleus + other.nucleus)
+
+    def __sub__(self, other):
+        if self.nucleus - other.nucleus < 1:
+            raise ValueError("Вычитаемый компонент больше или равен чем уменьшаемый")
+        return Cell(self.nucleus - other.nucleus)
+
+    def __mul__(self, other):
+        return Cell(self.nucleus * other.nucleus)
+
+    def __truediv__(self, other):
+        if self.nucleus < other.nucleus:
+            raise ValueError("Делитель больше делимого компонента")
+        return Cell(self.nucleus // other.nucleus)
+
+    def make_order(self, row):
+        my_str = ''
+        for i in range(self.nucleus // row):
+            my_str += '*' * row + "\n"
+        if self.nucleus % row > 0:
+            my_str += '*' * (self.nucleus % row) + "\n"
+        return my_str
+
+
+covid_19 = Cell(12)
+hiv = Cell(4)
+variola = Cell(21)
+anthrax = Cell(134)
+
+print(covid_19.make_order(7))
+print(hiv.make_order(3))
+
+print((covid_19 + hiv).nucleus)
+print((variola - hiv).nucleus)
+print((anthrax * hiv).nucleus)
+print((anthrax / variola).make_order(21))
