@@ -6,7 +6,7 @@
 
 
 class MyZeroDivisionError(Exception):
-    def __init__(self, txt):
+    def __init__(self, txt): # обязателен ли такой конструктор для данного exception-а?
         self.txt = txt
 
 my_number = 89087
@@ -21,3 +21,5 @@ try:
 
 except Exception as myerr:
     print(myerr)
+
+# такая реализация корректа?

@@ -12,3 +12,21 @@
 Класс-исключение должен не позволить пользователю ввести текст (не число) и отобразить соответствующее сообщение.
 При этом работа скрипта не должна завершаться.
 """
+
+
+class NonNumberInListError(Exception):
+    def __init__(self, txt):
+        self.txt = txt
+
+
+my_list = []
+while True:
+    step_number = input("Введите число\nДля завершения введите команду «stop»\n")
+    if step_number == "stop":
+        break
+    try:
+        my_list.append(int(step_number))
+    except ValueError as myerr: # не получается подставить собственный класс вместо ValueError. Где я ошибся?
+        print(NonNumberInListError("Ошибка ввода. Допускаются только целые числа\n"))
+
+print(my_list)
