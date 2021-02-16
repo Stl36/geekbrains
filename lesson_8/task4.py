@@ -24,7 +24,7 @@ class OfficeEquipment:
         self.adoption_year = adoption_year
 
     def __str__(self):
-        return self.brand, self.model, self.adoption_year, self.lan_type
+        return f"{self.brand}, {self.model}, {self.adoption_year}, {self.lan_type}"
 
 class Printer(OfficeEquipment):
     def __init__(self, brand, model, adoption_year, lan_type=None, color=True, species="laser"):
@@ -56,3 +56,4 @@ sclad1.positions.append(reserved_scan)
 sclad1.positions.append(main_xerox)
 sclad1.positions.append(reseption_printer)
 print(sclad1)
+print(reserved_scan)
