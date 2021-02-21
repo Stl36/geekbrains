@@ -1,0 +1,7 @@
+Ivanov 99000
+Petrov 13000
+Sidorov 20000
+Gogoberidze 999999
+Berdyev 35000
+Zozo 420000
+Blohin 19999
